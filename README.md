@@ -10,6 +10,9 @@ environment variables:
 
 * `MONGO_HOST`
 * `MONGO_PORT`
+* `MONGO_USER`
+* `MONGO_PASSWORD`
+* `MONGO_DB`
 * `AWS_ACCESS_KEY_ID`
 * `AWS_SECRET_ACCESS_KEY`
 * `S3_BUCKET`
