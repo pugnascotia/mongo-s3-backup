@@ -17,7 +17,7 @@ params=""
 [ -z "$MONGO_PASSWORD" ] || params="$params -password $MONGO_PASSWORD"
 [ -z "$MONGO_DB" ] || params="$params --db $MONGO_DB"
 
-mongodump --quiet --host $MONGO_HOST -port $MONGO_PORT $params
+mongodump --quiet --host $MONGO_HOST --port $MONGO_PORT $params
 
 echo "$(get_date) [Step 2/3] Creating tar archive"
 tar -zcvf $OUT dump/
