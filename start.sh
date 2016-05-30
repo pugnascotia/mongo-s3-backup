@@ -31,5 +31,6 @@ CRON_SCHEDULE=${CRON_SCHEDULE:-0 1 * * *}
 echo "$CRON_SCHEDULE $CRON_BACKUP_SCRIPT" | crontab -
 mkfifo /var/log/backup_script.log
 cron
+echo "cron task started: $CRON_SCHEDULE $CRON_BACKUP_SCRIPT"
 tail -f /var/log/backup_script.log
 
