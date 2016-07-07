@@ -25,7 +25,7 @@ tar -zcvf $ARCHIVE dump/
 rm -rf dump/
 
 echo "$(get_date) [Step 3/3] Uploading archive to S3"
-s3cmd put $ARCHIVE s3://$S3_BUCKET/$OUT
+/usr/local/bin/s3cmd put $ARCHIVE s3://$S3_BUCKET/$OUT
 rm $ARCHIVE
 
 echo "$(get_date) Mongo backup completed successfully"

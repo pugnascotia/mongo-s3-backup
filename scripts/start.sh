@@ -6,7 +6,7 @@ secret_key = $AWS_SECRET_ACCESS_KEY
 END
 
 CRON_BACKUP_SCRIPT=/root/mongo-backup.sh
-CRON_COMMAND="/script/backup.sh 1>/var/log/backup_script.log 2>&1"
+CRON_COMMAND="/scripts/backup.sh 1>/var/log/backup_script.log 2>&1"
 
 cat >$CRON_BACKUP_SCRIPT <<END
 #!/bin/sh
@@ -22,7 +22,7 @@ export S3_BUCKET=${S3_BUCKET:?"env variable is required"}
 export BACKUP_FILENAME_DATE_FORMAT=${BACKUP_FILENAME_DATE_FORMAT:-%Y%m%d}
 export BACKUP_FILENAME_PREFIX=${BACKUP_FILENAME_PREFIX:-mongo_backup}
 
-/script/backup.sh 1>/var/log/backup_script.log 2>&1
+/scripts/backup.sh 1>/var/log/backup_script.log 2>&1
 END
 
 chmod a+x $CRON_BACKUP_SCRIPT
